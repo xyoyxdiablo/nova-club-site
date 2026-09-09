@@ -68,3 +68,86 @@ export function PageHero({ marker, eyebrow, title }: { marker: string; eyebrow: 
     </Section>
   );
 }
+
+/** A slow-scrolling belt of short claims — reserved for facts already stated
+ * elsewhere on the site (personnalisation, maquette, délais). Never invents
+ * a new promise just to fill the band. */
+export function Marquee({ items }: { items: string[] }) {
+  const track = [...items, ...items]; // duplicated once for a seamless loop
+  return (
+    <div
+      style={{
+        borderTop: '1px solid var(--nv-c-border)',
+        borderBottom: '1px solid var(--nv-c-border)',
+        overflow: 'hidden',
+        padding: '16px 0',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          gap: 48,
+          width: 'max-content',
+          animation: 'nv-marquee 28s linear infinite',
+        }}
+      >
+        {track.map((item, i) => (
+          <span
+            key={i}
+            style={{
+              fontFamily: 'var(--nv-font-mono)',
+              fontSize: 11.5,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'var(--nv-c-soft)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+      <style>{`
+        @keyframes nv-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @media (prefers-reduced-motion: reduce) {
+          div[style*="nv-marquee"] { animation: none !important; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+/**
+ * Stands in for a photo we don't have yet. Renders a bordered box naming
+ * exactly what shot should go here — never a fake/generic stock image.
+ */
+export function ImagePlaceholder({ note, ratio = '4 / 3' }: { note: string; ratio?: string }) {
+  return (
+    <div
+      style={{
+        aspectRatio: ratio,
+        border: '1px dashed var(--nv-c-gray)',
+        background: 'var(--nv-c-bg-soft)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 24,
+        textAlign: 'center',
+      }}
+    >
+      <span
+        style={{
+          fontFamily: 'var(--nv-font-mono)',
+          fontSize: 11.5,
+          letterSpacing: '0.04em',
+          color: 'var(--nv-c-muted)',
+          maxWidth: '28ch',
+        }}
+      >
+        📷 PHOTO À AJOUTER
+        <br />
+        {note}
+      </span>
+    </div>
+  );
+}

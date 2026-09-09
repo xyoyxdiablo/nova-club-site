@@ -1,5 +1,5 @@
 import { Section, Eyebrow, Heading, Button } from '@novarythm/design-system';
-import { Nav, Footer } from '../Layout';
+import { Nav, Footer, Marquee, ImagePlaceholder } from '../Layout';
 
 export function Home() {
   return (
@@ -46,6 +46,26 @@ export function Home() {
               <p style={{ fontSize: 14.5, color: 'var(--nv-c-soft)', lineHeight: 1.55 }}>{body}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Marquee
+        items={['Personnalisation incluse', 'Maquette 3D offerte', 'Fabrication 45 jours ouvrés', 'Accompagnement dédié']}
+      />
+
+      <Section>
+        <Eyebrow marker="§03">Inspiration</Eyebrow>
+        <Heading level={2} style={{ marginTop: 16, maxWidth: '26ch' }}>
+          Les couleurs de vos clubs, en compétition
+        </Heading>
+        <p style={{ fontSize: 15, color: 'var(--nv-c-soft)', marginTop: 12, maxWidth: '56ch' }}>
+          Trois exemples de tenues déjà livrées à des clubs — à remplacer par vos propres photos dès qu'elles sont
+          disponibles.
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20, marginTop: 32 }}>
+          <ImagePlaceholder note="Équipe de club en tenue NovaRythm, en compétition ou à l'entraînement" />
+          <ImagePlaceholder note="Détail broderie/logo du club sur une veste ou un débardeur" />
+          <ImagePlaceholder note="Groupe de gymnastes portant l'ensemble veste + bas assortis" />
         </div>
       </Section>
 

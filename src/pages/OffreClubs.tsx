@@ -1,5 +1,18 @@
 import { Section, Eyebrow, Heading, Badge } from '@novarythm/design-system';
-import { Nav, Footer, PageHero } from '../Layout';
+import { Nav, Footer, PageHero, ImagePlaceholder } from '../Layout';
+
+const ATELIER_STEPS: Array<{ title: string; body: string; note: string }> = [
+  {
+    title: 'On confectionne.',
+    body: 'Chaque pièce est coupée et montée pour votre commande, aux couleurs et au logo de votre club.',
+    note: "Photo atelier : coupe ou montage d'une pièce en cours de confection",
+  },
+  {
+    title: 'On contrôle.',
+    body: 'Couleurs, logo, finitions vérifiés avant expédition, référence par référence.',
+    note: 'Photo atelier : contrôle qualité ou finition (broderie, couture) en gros plan',
+  },
+];
 
 const CUSTOM_ITEMS = ['Couleurs', 'Logos', 'Coupes', 'Marquages', 'Broderies'];
 
@@ -29,7 +42,38 @@ export function OffreClubs() {
       </Section>
 
       <Section>
-        <Eyebrow marker="§03">Du devis à la livraison</Eyebrow>
+        <Eyebrow marker="§03">Notre atelier</Eyebrow>
+        <Heading level={2} style={{ marginTop: 16, maxWidth: '26ch' }}>
+          Vos tenues, fabriquées avec exigence
+        </Heading>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 56, marginTop: 40 }}>
+          {ATELIER_STEPS.map((step, i) => (
+            <div
+              key={step.title}
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: 40,
+                alignItems: 'center',
+                direction: i % 2 === 1 ? 'rtl' : 'ltr',
+              }}
+            >
+              <div style={{ direction: 'ltr' }}>
+                <ImagePlaceholder note={step.note} ratio="4 / 3" />
+              </div>
+              <div style={{ direction: 'ltr' }}>
+                <Heading level={3} italic>
+                  {step.title}
+                </Heading>
+                <p style={{ fontSize: 15, color: 'var(--nv-c-soft)', marginTop: 12, maxWidth: '40ch' }}>{step.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="soft">
+        <Eyebrow marker="§04">Du devis à la livraison</Eyebrow>
         <Heading level={2} style={{ marginTop: 16 }}>
           Quatre étapes, un seul interlocuteur
         </Heading>
