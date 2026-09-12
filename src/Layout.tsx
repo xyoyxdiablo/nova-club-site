@@ -4,6 +4,7 @@ import '@novarythm/design-system/styles.css';
 
 const NAV_LINKS = [
   { href: '/', label: 'Accueil' },
+  { href: '/collection-2026.html', label: 'Collection 2026' },
   { href: '/survetements.html', label: 'Survêtements club' },
   { href: '/offre.html', label: 'Offre clubs' },
   { href: '/catalogue.html', label: 'Catalogue B2B' },

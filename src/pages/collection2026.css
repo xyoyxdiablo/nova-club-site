@@ -1,0 +1,399 @@
+/* Collection Club 2026 — landing page dédiée. Palette et typo précises du
+   brief : crème plus chaude (#F4F1EA) et filets plus sombres (#C8C4BB) que le
+   reste du site — respectés à la lettre pour cette page, scopés sous .c26. */
+.c26 {
+  --c26-white: #ffffff;
+  --c26-cream: #f4f1ea;
+  --c26-ink: #0a0a0a;
+  --c26-line-cream: #c8c4bb;
+  --c26-line-white: #e6e6e6;
+  --c26-text: #2a2a2a;
+  --c26-soft: #5a5a5a;
+  --c26-muted: #8a8a8a;
+
+  font-family: 'Inter', var(--nv-font-sans, sans-serif);
+  color: var(--c26-text);
+  background: var(--c26-white);
+}
+
+.c26 * {
+  box-sizing: border-box;
+}
+
+.c26 img {
+  display: block;
+  max-width: 100%;
+}
+
+.c26-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c26-soft);
+}
+
+.c26-h1 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(40px, 8vw, 110px);
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  margin: 18px 0 0;
+  color: var(--c26-ink);
+}
+
+.c26-h2 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(32px, 6vw, 74px);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0;
+  color: var(--c26-ink);
+}
+
+.c26-lead {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(17px, 2vw, 24px);
+  color: var(--c26-text);
+  line-height: 1.4;
+}
+
+.c26-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c26-soft);
+}
+
+.c26-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 26px;
+  border: 1px solid var(--c26-ink);
+  background: var(--c26-ink);
+  color: var(--c26-white);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+.c26-btn:hover {
+  opacity: 0.82;
+}
+.c26-btn--ghost {
+  background: transparent;
+  color: var(--c26-ink);
+}
+.c26-btn--on-ink {
+  background: var(--c26-white);
+  color: var(--c26-ink);
+  border-color: var(--c26-white);
+}
+
+.c26-section {
+  padding: clamp(56px, 9vw, 108px) clamp(24px, 6vw, 64px);
+}
+.c26-section--white {
+  background: var(--c26-white);
+}
+.c26-section--cream {
+  background: var(--c26-cream);
+}
+.c26-section--ink {
+  background: var(--c26-ink);
+  color: rgba(255, 255, 255, 0.86);
+}
+.c26-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* ---------- 1. Hero ---------- */
+.c26-hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--c26-ink);
+}
+.c26-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.c26-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 10, 10, 0.85), transparent 80%);
+}
+.c26-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: clamp(32px, 6vw, 64px);
+  max-width: 620px;
+  color: #fff;
+}
+.c26-hero-content .c26-eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+.c26-hero-content .c26-h1 {
+  color: #fff;
+}
+.c26-hero-content .c26-lead {
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 18px;
+}
+.c26-hero-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 16px;
+}
+
+/* ---------- 2. Barre de preuves ---------- */
+.c26-proofbar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.c26-proofbar-item .num {
+  font-family: 'EB Garamond', serif;
+  font-size: 44px;
+  color: #fff;
+}
+.c26-proofbar-item .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 8px;
+}
+
+/* ---------- grids ---------- */
+.c26-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.c26-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+.c26-card figure {
+  margin: 0;
+  border: 1px solid var(--c26-line-white);
+}
+.c26-section--cream .c26-card figure {
+  border-color: var(--c26-line-cream);
+}
+.c26-card img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  width: 100%;
+}
+.c26-card .name {
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  margin-top: 14px;
+  color: var(--c26-ink);
+}
+.c26-card .ref {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--c26-muted);
+  margin-top: 4px;
+}
+
+/* ---------- 5. Matières ---------- */
+.c26-materials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--c26-line-white);
+  border: 1px solid var(--c26-line-white);
+}
+.c26-material {
+  background: var(--c26-white);
+  padding: 0;
+}
+.c26-material img {
+  width: 100%;
+}
+.c26-material .body {
+  padding: 24px;
+}
+.c26-material .name {
+  font-family: 'EB Garamond', serif;
+  font-size: 22px;
+}
+.c26-material .attrs {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.c26-material .attrs span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c26-soft);
+}
+
+/* ---------- 6. Personnalisation ---------- */
+.c26-perso {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.c26-perso-macros {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.c26-perso-macros img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+  border: 1px solid var(--c26-line-cream);
+}
+.c26-perso-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.c26-perso-text .item .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c26-ink);
+}
+.c26-perso-text .item p {
+  font-size: 14.5px;
+  color: var(--c26-soft);
+  margin-top: 6px;
+}
+
+/* ---------- 7. Process ---------- */
+.c26-process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.c26-step {
+  border-top: 2px solid var(--c26-ink);
+  padding-top: 18px;
+}
+.c26-step .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--c26-muted);
+}
+.c26-step .title {
+  font-family: 'EB Garamond', serif;
+  font-size: 20px;
+  margin-top: 8px;
+}
+.c26-step .note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--c26-muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* ---------- 8. Mosaïque preuve ---------- */
+.c26-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 120px;
+  gap: 12px;
+}
+.c26-mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.c26-mosaic .big {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+.c26-mosaic .med {
+  grid-row: span 2;
+}
+
+/* ---------- 9. CTA final ---------- */
+.c26-final {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+.c26-final-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 6vw, 72px);
+  gap: 22px;
+}
+.c26-final-text a.mono-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.7);
+}
+.c26-final-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .c26-proofbar,
+  .c26-grid-3,
+  .c26-materials,
+  .c26-process {
+    grid-template-columns: 1fr;
+  }
+  .c26-grid-5 {
+    grid-auto-flow: column;
+    grid-auto-columns: 62vw;
+    overflow-x: auto;
+    grid-template-columns: none;
+  }
+  .c26-perso {
+    grid-template-columns: 1fr;
+  }
+  .c26-final {
+    grid-template-columns: 1fr;
+  }
+  .c26-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .c26-mosaic .big {
+    grid-column: span 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c26-btn {
+    transition: none;
+  }
+}

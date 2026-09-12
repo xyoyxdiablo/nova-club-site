@@ -11,6 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        collection2026: resolve(__dirname, 'collection-2026.html'),
         survetements: resolve(__dirname, 'survetements.html'),
         offre: resolve(__dirname, 'offre.html'),
         catalogue: resolve(__dirname, 'catalogue.html'),
