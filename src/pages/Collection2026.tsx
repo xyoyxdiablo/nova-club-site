@@ -40,7 +40,7 @@ const PROOF_PHOTOS = [
 export function Collection2026() {
   return (
     <div className="c26">
-      <Nav current="/collection-2026.html" />
+      <Nav current="/" />
 
       {/* 1 — HERO */}
       <section className="c26-hero">

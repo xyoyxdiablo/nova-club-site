@@ -1,43 +1,40 @@
+import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { Section, Eyebrow, Heading, Button } from '@novarythm/design-system';
 import '@novarythm/design-system/styles.css';
+import './Layout.css';
 
 const NAV_LINKS = [
   { href: '/', label: 'Accueil' },
-  { href: '/collection-2026.html', label: 'Collection 2026' },
-  { href: '/survetements.html', label: 'Survêtements club' },
   { href: '/offre.html', label: 'Offre clubs' },
   { href: '/catalogue.html', label: 'Catalogue B2B' },
   { href: '/contact.html', label: 'Contact' },
 ];
 
 export function Nav({ current }: { current: string }) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '20px clamp(22px, 5vw, 40px)',
-        borderBottom: '1px solid var(--nv-c-border)',
-      }}
-    >
-      <a href="/" style={{ border: 'none', fontFamily: 'var(--nv-font-mono)', fontWeight: 600, letterSpacing: '0.04em' }}>
+    <nav className="nv-nav">
+      <a href="/" className="nv-nav-logo">
         NOVARYTHM CLUBS
       </a>
-      <div style={{ display: 'flex', gap: 28 }}>
+      <button
+        className="nv-nav-toggle"
+        aria-label="Ouvrir le menu"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+      >
+        <span />
+        <span />
+      </button>
+      <div className={`nv-nav-links${open ? ' nv-nav-links--open' : ''}`}>
         {NAV_LINKS.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            style={{
-              border: 'none',
-              fontFamily: 'var(--nv-font-mono)',
-              fontSize: 12.5,
-              letterSpacing: '0.06em',
-              textTransform: 'uppercase',
-              color: current === link.href ? 'var(--nv-c-ink)' : 'var(--nv-c-soft)',
-            }}
+            className="nv-nav-link"
+            style={{ color: current === link.href ? 'var(--nv-c-ink)' : 'var(--nv-c-soft)' }}
           >
             {link.label}
           </a>
