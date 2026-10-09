@@ -3,42 +3,51 @@ import { Nav, Footer, PageHero, ImagePlaceholder } from '../Layout';
 
 const ATELIER_STEPS: Array<{ title: string; body: string; note: string }> = [
   {
-    title: 'On confectionne.',
-    body: 'Chaque pièce est coupée et montée pour votre commande, aux couleurs et au logo de votre club.',
+    title: 'On valide avant production.',
+    body: 'Couleurs, logos, placements et détails principaux sont définis avant le lancement.',
     note: "Photo atelier : coupe ou montage d'une pièce en cours de confection",
   },
   {
-    title: 'On contrôle.',
-    body: 'Couleurs, logo, finitions vérifiés avant expédition, référence par référence.',
+    title: 'On contrôle avant expédition.',
+    body: 'Conformité du modèle, marquages et finitions sont vérifiés avant le départ.',
     note: 'Photo atelier : contrôle qualité ou finition (broderie, couture) en gros plan',
   },
 ];
 
-const CUSTOM_ITEMS = ['Couleurs', 'Logos', 'Coupes', 'Marquages', 'Broderies'];
+const RECOVERY_NOTE =
+  "Et si un problème relevant de notre production survient ? Notre équipe prend le dossier en charge et définit avec le club la solution adaptée.";
+
+const CUSTOM_ITEMS = ['Couleurs', 'Logos', 'Marquages', 'Détails de coupe selon modèle', 'Broderie'];
 
 const STEPS = [
   ['Votre projet', 'Le produit, les quantités par taille, le délai souhaité, votre logo et vos couleurs.'],
-  ['Maquette 3D & devis', 'Une proposition personnalisée et chiffrée, avant tout engagement.'],
-  ['Fabrication', 'Fabrication standard : 45 jours ouvrés — nous ne promettons jamais moins, pour tenir ce que nous annonçons.'],
-  ['Livraison', 'France : +5 à 10 jours. International : +10 à 21 jours selon la zone.'],
+  ['Maquette & devis', 'Une proposition personnalisée et chiffrée, avant tout engagement.'],
+  ['Fabrication', 'Prévoir 45 jours ouvrés, livraison comprise, pour un projet standard. Une échéance particulière ? Nous vérifions sa faisabilité avant validation.'],
+  ['Livraison', 'Votre commande vous est expédiée dès la fin de fabrication — le délai de 45 jours ouvrés annoncé à l’étape précédente comprend déjà la livraison.'],
 ];
 
 export function OffreClubs() {
   return (
     <>
       <Nav current="/offre.html" />
-      <PageHero marker="§01" eyebrow="Offre clubs" title="Personnalisation incluse, sans supplément" />
+      <PageHero marker="§01" eyebrow="Offre clubs" title="Votre identité club, déclinée sur toute votre collection." />
 
       <Section tone="soft">
         <Eyebrow marker="§02">Personnalisation</Eyebrow>
         <Heading level={2} style={{ marginTop: 16, maxWidth: '24ch' }}>
-          Chaque référence se personnalise entièrement
+          Chaque référence s'adapte à votre identité
         </Heading>
+        <p style={{ fontSize: 15, color: 'var(--nv-c-soft)', marginTop: 12, maxWidth: '58ch' }}>
+          Couleurs, logos, marquages et détails définis autour de votre projet.
+        </p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 32 }}>
           {CUSTOM_ITEMS.map((item) => (
             <Badge key={item}>{item}</Badge>
           ))}
         </div>
+        <p style={{ fontSize: 13.5, color: 'var(--nv-c-muted)', marginTop: 20 }}>
+          Personnalisation standard incluse dans nos tarifs — aucun supplément caché.
+        </p>
       </Section>
 
       <Section>
@@ -70,6 +79,9 @@ export function OffreClubs() {
             </div>
           ))}
         </div>
+        <p style={{ fontSize: 14, color: 'var(--nv-c-muted)', marginTop: 40, maxWidth: '58ch', fontStyle: 'italic' }}>
+          {RECOVERY_NOTE}
+        </p>
       </Section>
 
       <Section tone="soft">

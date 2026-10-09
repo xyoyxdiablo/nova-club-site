@@ -8,27 +8,31 @@ const NEEDED = ['Le produit', 'Les quantités par taille', 'Le délai souhaité'
 const FAQ: Array<{ q: string; a: string }> = [
   {
     q: 'Est-ce vraiment sans engagement ?',
-    a: 'Vous recevez une maquette 3D et un devis chiffré avant toute validation — rien n’est engagé tant que vous n’avez pas donné votre accord.',
+    a: 'Vous recevez une maquette et un devis chiffré avant toute validation — rien n’est engagé tant que vous n’avez pas donné votre accord.',
   },
   {
     q: 'Quels types de tenues proposez-vous ?',
     a: 'Trois références club : veste, débardeur, et bas (legging ou jogging) — voir le catalogue B2B pour le détail et les tarifs.',
   },
   {
-    q: 'Et si on est un petit club ?',
-    a: 'Nos tarifs comportent un palier "< 100 pièces" pensé pour les petits effectifs, pas seulement les gros clubs.',
+    q: 'Y a-t-il un minimum de commande ?',
+    a: 'Non, il n’y a pas de minimum de commande imposé. Nos tarifs comportent simplement un palier "< 100 pièces", pensé pour les petits effectifs, et un palier "≥ 100 pièces" pour les commandes plus importantes.',
   },
   {
-    q: 'Peut-on faire plusieurs tailles ou couleurs dans une commande ?',
-    a: 'Oui — une même commande peut mélanger tailles enfants (6 à 12 ans) et adultes (XS à XXL) ; la personnalisation couleurs est incluse par référence.',
+    q: 'Peut-on mélanger plusieurs tailles dans une commande ?',
+    a: 'Oui — une même commande peut mélanger tailles enfants (6 à 12 ans) et adultes (XS à XXL).',
+  },
+  {
+    q: 'Peut-on commander plusieurs couleurs dans une même commande ?',
+    a: "[À préciser avec l'équipe — indiquer ici la règle de production actuelle sur les variations de couleurs par commande]",
   },
   {
     q: 'Peut-on tester les textiles avant de commander ?',
-    a: '[À préciser avec l’équipe — indiquer ici la politique d’échantillons si elle existe]',
+    a: 'Un échantillon non personnalisé peut être proposé selon le projet. Un échantillon personnalisé est généralement facturé, son coût pouvant être déduit de la commande finale si celle-ci est confirmée. Nous ne proposons pas l’envoi de plusieurs échantillons sans projet qualifié.',
   },
   {
     q: 'Quels sont les délais réels ?',
-    a: 'Fabrication : 45 jours ouvrés. Livraison : +5 à 10 jours en France, +10 à 21 jours à l’international selon la zone.',
+    a: 'Prévoir 45 jours ouvrés, livraison comprise, pour un projet standard. Pour une échéance précise, nous vérifions la faisabilité avant validation.',
   },
 ];
 
@@ -89,7 +93,7 @@ export function Contact() {
   return (
     <>
       <Nav current="/contact.html" />
-      <PageHero marker="§01" eyebrow="Parlons de votre club" title="Chaque club a sa couleur. La vôtre commence ici." />
+      <PageHero marker="§01" eyebrow="Parlons de votre club" title="Parlons de votre projet club." />
 
       <Section tone="soft">
         <Eyebrow marker="§02">Commencez aujourd'hui</Eyebrow>
@@ -97,7 +101,9 @@ export function Contact() {
           Même avec une simple idée, on avance ensemble
         </Heading>
         <p style={{ fontSize: 15, color: 'var(--nv-c-soft)', marginTop: 14, maxWidth: '58ch' }}>
-          Transmettez-nous ces quatre informations pour recevoir un devis sous quelques jours&nbsp;:
+          Même si votre projet n'est pas encore totalement défini, quelques informations suffisent
+          pour commencer. Transmettez-nous ces quatre points pour que nous puissions préparer une
+          première proposition et chiffrer votre projet&nbsp;:
         </p>
         <ul style={{ marginTop: 16, paddingLeft: 20, color: 'var(--nv-c-text)', fontSize: 14.5, lineHeight: 1.8 }}>
           {NEEDED.map((n) => (
@@ -123,10 +129,13 @@ export function Contact() {
               id="message"
               className="nv-input"
               rows={5}
-              placeholder="Produit, quantités par taille, délai souhaité..."
+              placeholder="Produit, quantités par taille, délai souhaité, couleurs souhaitées..."
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
+            <p style={{ fontSize: 13, color: 'var(--nv-c-muted)', marginTop: 8 }}>
+              Vous pourrez joindre votre logo directement dans l'email qui va s'ouvrir.
+            </p>
           </div>
           <Button variant="primary" type="submit">
             Envoyer la demande →

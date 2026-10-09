@@ -55,8 +55,8 @@ export function Catalogue() {
           Tarifs HT indicatifs
         </Heading>
         <p style={{ fontSize: 15, color: 'var(--nv-c-soft)', marginTop: 12, maxWidth: '60ch' }}>
-          Hors personnalisation — chaque projet fait l'objet d'un devis chiffré selon quantités, coupes et
-          finitions retenues.
+          Personnalisation standard incluse dans les prix indiqués — chaque projet reste chiffré
+          précisément selon quantités, coupes et finitions retenues.
         </p>
         <div style={{ marginTop: 28 }}>
           <Table columns={columns} rows={rows} />
