@@ -55,6 +55,17 @@ export function OffreClubs() {
         <Heading level={2} style={{ marginTop: 16, maxWidth: '26ch' }}>
           Vos tenues, fabriquées avec exigence
         </Heading>
+        <div style={{ aspectRatio: '16 / 9', overflow: 'hidden', marginTop: 32, background: '#000' }}>
+          <video
+            src="/img-2026/atelier-production.mp4"
+            poster="/img-2026/atelier-production-poster.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 56, marginTop: 40 }}>
           {ATELIER_STEPS.map((step, i) => (
             <div
