@@ -1,7 +1,31 @@
 # nova-club-site — Fichier Maître Session
 > Lire ce fichier EN PREMIER à chaque ouverture de session sur ce repo.
 > Mettre à jour EN DERNIER avant de clore la session.
-> Dernière mise à jour : 16/10/2026 (session photos case studies + atelier) — voir tout en haut.
+> Dernière mise à jour : 16/10/2026 (session photos case studies + atelier + catalogue masqué + hero Offre clubs) — voir tout en haut.
+
+## 🎯 SESSION 16/10/2026 (suite) — Catalogue B2B masqué, photo bannière Offre clubs, barre de preuves home dédupliquée
+
+**✅ FAIT**
+- **Catalogue B2B masqué** : demandé par la cheffe de projet (page jugée inutile + ne veut plus afficher
+  les tarifs publiquement). Retiré de la nav (`Layout.tsx`), des 2 CTA "Voir le catalogue" sur la home,
+  et de la FAQ Contact qui y renvoyait pour les tarifs (reformulée sans mention de prix). La page
+  `catalogue.html` reste buildée (accessible par URL directe uniquement) — pas supprimée, juste masquée.
+  Commit `60f9579`.
+- **Bannière photo sur Offre clubs §01** : `PageHero` (`Layout.tsx`) accepte maintenant une image
+  optionnelle (16:9, sous le H1). Photo fournie par la cheffe de projet (veste finalisée + planche
+  technique + nuancier tissu + étiquette brodée, en atelier) — cohérente avec le §02 Personnalisation
+  juste en dessous. Commit `8c6bdeb`.
+- **Barre de preuves home dédupliquée** : la cheffe de projet a repéré que les 3 chiffres de la barre
+  du haut (Ballainvilliers/Le Perreux/Arena) répétaient exactement la section "Des projets clubs, en
+  chiffres" juste en dessous (maintenant illustrée de photos, cf. session précédente). Remplacés par 3
+  promesses déjà sourcées ailleurs sur le site (45 jours ouvrés fabrication+livraison, 0 minimum de
+  commande, personnalisation incluse) — "6 ans → XXL" gardé tel quel (pas un doublon). Commit `8c6bdeb`.
+
+### 🔜 Reste ouvert
+- Rien d'identifié pour l'instant sur ces 3 points — à re-regarder en direct par la cheffe de projet
+  au prochain déploiement GitHub Pages.
+
+---
 
 ## 🎯 SESSION 16/10/2026 — 3 photos case studies intégrées + "Notre atelier" simplifié
 
