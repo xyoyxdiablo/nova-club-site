@@ -28,7 +28,15 @@ export function OffreClubs() {
   return (
     <>
       <Nav current="/offre.html" />
-      <PageHero marker="§01" eyebrow="Offre clubs" title="Votre identité club, déclinée sur toute votre collection." />
+      <PageHero
+        marker="§01"
+        eyebrow="Offre clubs"
+        title="Votre identité club, déclinée sur toute votre collection."
+        image={{
+          src: '/img-2026/hero-personnalisation-atelier.jpg',
+          alt: 'Veste NovaRythm finalisée, posée à côté de sa planche technique, des nuances de tissu et de son étiquette brodée, en atelier',
+        }}
+      />
 
       <Section tone="soft">
         <Eyebrow marker="§02">Personnalisation</Eyebrow>

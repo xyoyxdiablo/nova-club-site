@@ -92,16 +92,16 @@ export function Collection2026() {
       <section className="c26-section c26-section--ink">
         <div className="c26-inner c26-proofbar">
           <div className="c26-proofbar-item">
-            <div className="num">125 pièces</div>
-            <div className="label">Réassort Ballainvilliers 2026</div>
+            <div className="num">45 jours ouvrés</div>
+            <div className="label">Fabrication et livraison incluses</div>
           </div>
           <div className="c26-proofbar-item">
-            <div className="num">76 précommandes</div>
-            <div className="label">Avant lancement de 100 vestes au Perreux</div>
+            <div className="num">0 minimum</div>
+            <div className="label">Aucune quantité minimum imposée</div>
           </div>
           <div className="c26-proofbar-item">
-            <div className="num">27 vestes</div>
-            <div className="label">Projet Arena Sport Nogent</div>
+            <div className="num">Incluse</div>
+            <div className="label">Personnalisation couleurs, logo, marquage</div>
           </div>
           <div className="c26-proofbar-item">
             <div className="num">6 ans → XXL</div>

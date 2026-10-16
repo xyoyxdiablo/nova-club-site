@@ -58,11 +58,26 @@ export function Footer() {
   );
 }
 
-export function PageHero({ marker, eyebrow, title }: { marker: string; eyebrow: string; title: ReactNode }) {
+export function PageHero({
+  marker,
+  eyebrow,
+  title,
+  image,
+}: {
+  marker: string;
+  eyebrow: string;
+  title: ReactNode;
+  image?: { src: string; alt: string };
+}) {
   return (
     <Section>
       <Eyebrow marker={marker}>{eyebrow}</Eyebrow>
       <Heading level={1}>{title}</Heading>
+      {image && (
+        <div style={{ aspectRatio: '16 / 9', overflow: 'hidden', marginTop: 32 }}>
+          <img src={image.src} alt={image.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+      )}
     </Section>
   );
 }
