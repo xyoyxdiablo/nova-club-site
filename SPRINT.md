@@ -3,6 +3,52 @@
 > Mettre à jour EN DERNIER avant de clore la session.
 > Dernière mise à jour : 16/10/2026 (session photos case studies + atelier + catalogue masqué + hero Offre clubs) — voir tout en haut.
 
+## 🔜 EN COURS (session interrompue, pas encore commencé l'implémentation) — Carrousel logos clubs sur la home
+
+**Demande de la cheffe de projet** : remplacer la barre de preuves "section 2" de la home (celle qu'on
+vient de dédupliquer juste au-dessus, "45 jours ouvrés / 0 minimum / Incluse / 6 ans → XXL") par un
+carrousel de logos des clubs partenaires, en mode "logos clients" façon site e-commerce (slide infini).
+Logos à **détourer (fond supprimé)** et **mettre au même format**.
+
+**Liste des 16 clubs à représenter** (donnée telle quelle par la cheffe de projet) :
+GR Paray, Thiais GR, Olatu Berria Gym, Cadence Dourdan, ASSGA Gym, GR Toulouse, GR Ballainvilliers,
+GRS Gradignan, Gym Passion 13, Clamart Gym 92, Olympique Rethélois Gymnique, ANGR Niort,
+US Arena Nogent GR, Cascade Rhythmic USA, AnisseGR, Arts&Culture Châteauneuf-du-Pape,
+Grenoble Gymnastique (la cheffe de projet elle-même n'a pas trouvé d'exemple/logo pour celui-ci).
+
+**Pistes déjà repérées sur le Drive** (recherche faite, rien téléchargé ni traité pour l'instant) :
+- Dossier `04 — Client Records` (id `1POXh6QESJuaidypQ3WQM4eNT2rjcYooN`) contient des sous-dossiers par
+  client, parfois avec un sous-dossier `01 — Logos & Brand` propre.
+- **Cascade Rhythmic USA** : dossier `Cascade Rhythmic USA — 2026` → `01 — Logos & Brand` déjà rempli de
+  logos propres (couleur, N&B horizontal, carré, horizontal couleur) — le plus simple des 16.
+- **GR Toulouse** : dossier dédié existe (`1uuBM8OVtR1L-pujfWlr77lp7pJioNySi`), contenu pas encore inspecté.
+- **GRS Gradignan** : dossier dédié existe (`1cRysd07g9udxm1zb0IIkQ_ihW62jBI0G`), contenu pas encore inspecté.
+- Les autres clubs n'ont pas de dossier dans `04 — Client Records` (recherche sur ce dossier precis
+  épuisée, seulement 3 clubs + 1 PDF Dourdan dedans) — il faudra chercher ailleurs sur le Drive (recherche
+  par nom de club) ou sur le site web / Facebook officiel de chaque club pour les ~13 restants.
+
+**⚠️ Point de vigilance pour la suite** : une première tentative de lancer 4 agents en parallèle (un fork
+par groupe de clubs) pour sourcer les logos a été refusée par la cheffe de projet avant exécution — elle
+a préféré interrompre la session plutôt que laisser tourner cette recherche en arrière-plan à ce moment-là.
+Pas de raison explicite donnée. À la reprise : proposer le plan d'abord (scope, sources envisagées) et
+laisser la cheffe de projet valider avant de lancer plusieurs agents en parallèle sur cette tâche, plutôt
+que de partir directement en recherche multi-agents.
+
+**Reste à faire (rien commencé niveau code)** :
+1. Terminer le sourcing des 16 logos (Drive + web), vérifier qu'aucun logo ne correspond au mauvais club
+   (plusieurs noms proches : GR Paray / GR Toulouse / GR Ballainvilliers / GRS Gradignan ; US Arena Nogent
+   GR vs le "Arena Sport Nogent" déjà utilisé comme case study — à vérifier si c'est bien le même club).
+2. Détourer chaque logo (fond blanc/uni → transparent) — pas d'ImageMagick installé sur la machine, PIL
+   (Python) disponible, suffisant pour un détourage simple par couleur de fond.
+3. Uniformiser le format (même ratio/cadrage, fond cohérent — blanc ou transparent selon le fond de la
+   section qui les accueillera).
+4. Construire un composant carrousel "slide infini" façon logos clients e-commerce (il existe déjà un
+   `Marquee` dans `Layout.tsx` mais pour du texte, pas des images — probablement à adapter ou dupliquer).
+5. Remplacer la section 2 (barre de preuves) de `Collection2026.tsx` par ce carrousel.
+6. Build + preview local + vérif visuelle avant push (comme pour les sessions précédentes).
+
+---
+
 ## 🎯 SESSION 16/10/2026 (suite) — Catalogue B2B masqué, photo bannière Offre clubs, barre de preuves home dédupliquée
 
 **✅ FAIT**
