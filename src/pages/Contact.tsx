@@ -12,7 +12,7 @@ const FAQ: Array<{ q: string; a: string }> = [
   },
   {
     q: 'Quels types de tenues proposez-vous ?',
-    a: 'Trois références club : veste, débardeur, et bas (legging ou jogging) — voir le catalogue B2B pour le détail et les tarifs.',
+    a: 'Trois références club : veste, débardeur, et bas (legging ou jogging). Présentez-nous votre projet pour un devis personnalisé.',
   },
   {
     q: 'Y a-t-il un minimum de commande ?',

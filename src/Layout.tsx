@@ -7,7 +7,6 @@ import './Layout.css';
 const NAV_LINKS = [
   { href: '/', label: 'Accueil' },
   { href: '/offre.html', label: 'Offre clubs' },
-  { href: '/catalogue.html', label: 'Catalogue B2B' },
   { href: '/contact.html', label: 'Contact' },
 ];
 

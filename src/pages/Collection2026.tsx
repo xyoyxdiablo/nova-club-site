@@ -84,9 +84,6 @@ export function Collection2026() {
             <a className="c26-btn c26-btn--on-ink" href="/contact.html">
               Présenter mon projet
             </a>
-            <a className="mono-link" href="/catalogue.html" style={{ marginLeft: 8 }}>
-              Voir le catalogue
-            </a>
           </div>
         </div>
       </section>
@@ -281,9 +278,6 @@ export function Collection2026() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
             <a className="c26-btn c26-btn--on-ink" href="/contact.html">
               Présenter mon projet
-            </a>
-            <a className="mono-link" href="/catalogue.html">
-              Voir le catalogue
             </a>
             <a className="mono-link" href="mailto:equipe@novarythm.com">
               equipe@novarythm.com
