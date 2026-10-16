@@ -27,21 +27,21 @@ const CASE_STUDIES = [
     stat: '125 pièces en réassort en 2026',
     detail: '39 vestes · 54 joggings · 32 débardeurs',
     quote: "Après plusieurs projets réalisés ensemble, le club renouvelle ses équipements avec NovaRythm.",
-    placeholder: 'Photo finale Ballainvilliers GR — à fournir',
+    img: '/img-2026/case-ballainvilliers.jpg',
   },
   {
     club: 'Le Perreux',
     stat: '30 demandes en 1 heure. 50 en 48 h.',
     detail: '76 précommandes avant la validation d’une commande de 100 vestes.',
     quote: 'Un projet pensé autour de l’identité du club et immédiatement adopté par ses adhérentes.',
-    placeholder: 'Photo finale Gym Club Le Perreux — à fournir',
+    img: '/img-2026/case-le-perreux.jpg',
   },
   {
     club: 'Arena Sport Nogent',
     stat: '27 vestes personnalisées',
     detail: 'Livrées en moins d’un mois sur ce projet, pour répondre à une échéance sportive.',
     quote: 'Nous sommes ravies et vous remercions infiniment pour votre efficacité.',
-    placeholder: 'Photo finale Arena Sport Nogent — à fournir',
+    img: '/img-2026/case-arena-nogent.jpg',
   },
 ];
 
@@ -220,7 +220,7 @@ export function Collection2026() {
             {CASE_STUDIES.map((c) => (
               <div className="c26-card" key={c.club}>
                 <figure>
-                  <ImagePlaceholder note={c.placeholder} ratio="4 / 3" />
+                  <img src={c.img} alt={c.club} style={{ width: '100%', aspectRatio: '4 / 3', objectFit: 'cover' }} />
                 </figure>
                 <div className="name">{c.club}</div>
                 <div style={{ fontFamily: 'var(--nv-font-ui)', fontWeight: 700, fontSize: 18, marginTop: 10 }}>

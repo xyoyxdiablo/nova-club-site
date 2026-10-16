@@ -1,16 +1,14 @@
 import { Section, Eyebrow, Heading, Badge } from '@novarythm/design-system';
-import { Nav, Footer, PageHero, ImagePlaceholder } from '../Layout';
+import { Nav, Footer, PageHero } from '../Layout';
 
-const ATELIER_STEPS: Array<{ title: string; body: string; note: string }> = [
+const ATELIER_STEPS: Array<{ title: string; body: string }> = [
   {
     title: 'On valide avant production.',
     body: 'Couleurs, logos, placements et détails principaux sont définis avant le lancement.',
-    note: "Photo atelier : coupe ou montage d'une pièce en cours de confection",
   },
   {
     title: 'On contrôle avant expédition.',
     body: 'Conformité du modèle, marquages et finitions sont vérifiés avant le départ.',
-    note: 'Photo atelier : contrôle qualité ou finition (broderie, couture) en gros plan',
   },
 ];
 
@@ -66,27 +64,20 @@ export function OffreClubs() {
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 56, marginTop: 40 }}>
-          {ATELIER_STEPS.map((step, i) => (
-            <div
-              key={step.title}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 40,
-                alignItems: 'center',
-                direction: i % 2 === 1 ? 'rtl' : 'ltr',
-              }}
-            >
-              <div style={{ direction: 'ltr' }}>
-                <ImagePlaceholder note={step.note} ratio="4 / 3" />
-              </div>
-              <div style={{ direction: 'ltr' }}>
-                <Heading level={3} italic>
-                  {step.title}
-                </Heading>
-                <p style={{ fontSize: 15, color: 'var(--nv-c-soft)', marginTop: 12, maxWidth: '40ch' }}>{step.body}</p>
-              </div>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 40,
+            marginTop: 48,
+          }}
+        >
+          {ATELIER_STEPS.map((step) => (
+            <div key={step.title}>
+              <Heading level={3} italic>
+                {step.title}
+              </Heading>
+              <p style={{ fontSize: 15, color: 'var(--nv-c-soft)', marginTop: 12, maxWidth: '40ch' }}>{step.body}</p>
             </div>
           ))}
         </div>
