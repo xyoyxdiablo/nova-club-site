@@ -1,7 +1,40 @@
 # nova-club-site — Fichier Maître Session
 > Lire ce fichier EN PREMIER à chaque ouverture de session sur ce repo.
 > Mettre à jour EN DERNIER avant de clore la session.
-> Dernière mise à jour : 09/10/2026 (session copy + images) — voir tout en haut.
+> Dernière mise à jour : 16/10/2026 (session photos case studies + atelier) — voir tout en haut.
+
+## 🎯 SESSION 16/10/2026 — 3 photos case studies intégrées + "Notre atelier" simplifié
+
+**Contexte** : reprise des trous laissés ouverts le 09/10 (section "Des projets clubs, en chiffres"
+sur la home en placeholders, 2 blocs photo vides sur "Notre atelier"). La cheffe de projet a pointé
+vers le Drive : dossier `06_ACQUISITION_OutReach / B2B Clubs 2026 — Repositionnement & Campagnes /
+ASSETS PREUVES — Clubs 2026`, déjà trié en sous-dossiers `01 — Ballainvilliers`, `02 — Le Perreux`,
+`03 — Arena Sport Nogent` (+ un doc `00 — INDEX` qui documente quelle photo utiliser et pourquoi pour
+chaque case study — utile à relire si de nouvelles photos sont ajoutées plus tard).
+
+**✅ FAIT**
+- **Home, section "Des projets clubs, en chiffres"** : les 3 `ImagePlaceholder` remplacés par de vraies
+  photos — Ballainvilliers GR (photo groupe, recommandée par l'INDEX comme image principale), Le Perreux
+  (veste en production, face — aucune photo portée par une gymnaste n'existe encore, point déjà noté dans
+  l'INDEX du Drive comme "manquant prioritaire"), Arena Sport Nogent (veste portée). Téléchargées depuis
+  Drive, recompressées en JPEG (`sips`, 1200px / qualité 78, 127-335 Ko — dans la fourchette des autres
+  assets `public/img-2026/`, cohérent avec les photos `proof-*` déjà en place).
+- **Offre clubs, "Notre atelier"** : les 2 blocs restaient en placeholder photo vide (coupe/confection,
+  contrôle qualité) — aucune photo dédiée disponible. Fusionnés en texte seul (2 colonnes, sans image) sous
+  la vidéo de production déjà en place (commit `0e821ef`), suivis de la note de réassurance incident
+  production. Plus aucun placeholder vide visible sur cette page.
+- Vérifié en local (`npm run build && npm run preview`) avant push. Commit `29d0453`, poussé sur
+  `origin/main` (déploiement auto GitHub Pages).
+
+### 🔜 Reste ouvert
+- **Photo portée équipe Le Perreux** toujours manquante (vestes turquoise/noir) — si elle est fournie un
+  jour, elle doit remplacer la photo produit actuelle comme image principale du case study (voir INDEX Drive).
+- Alt text des 6 photos "Ils portent NovaRythm" toujours identiques, pas personnalisés par club (reporté
+  depuis le 09/10, non prioritaire).
+- Dossier Drive `05 — Social proof — club à identifier` et `04 — Thiais` pas encore exploités sur ce site
+  (utiles pour enrichir une galerie sociale plus tard, club pas encore identifié sur certaines photos).
+
+---
 
 ## 🎯 SESSION 09/10/2026 — Refonte copy complète + 7/8 photos manquantes intégrées
 
