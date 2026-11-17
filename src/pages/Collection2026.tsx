@@ -81,8 +81,13 @@ export function Collection2026() {
             premier visuel jusqu'aux réassorts.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', marginTop: 28, flexWrap: 'wrap', gap: 8 }}>
-            <a className="c26-btn c26-btn--on-ink" href="/contact.html">
-              Présenter mon projet
+            <a
+              className="c26-btn c26-btn--on-ink"
+              href="https://cdn.shopify.com/s/files/1/0729/9189/9966/files/Catalogue-Novarythm-Club-2026-2027.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Télécharger catalogue 2027
             </a>
           </div>
         </div>
